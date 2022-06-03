@@ -1,0 +1,32 @@
+{
+  "name": "chitchat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "seeds": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sdavis525/ChitChat.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sdavis525/ChitChat/issues"
+  },
+  "homepage": "https://github.com/sdavis525/ChitChat#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.4",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "express-handlebars": "^6.0.6",
+    "express-session": "^1.17.3",
+    "handlebars": "^4.7.7",
+    "jest": "^28.1.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.20.1"
+  }
+}

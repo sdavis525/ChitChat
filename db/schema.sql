@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS LetsChat_db;
+
+CREATE DATABASE LetsChat_db;
