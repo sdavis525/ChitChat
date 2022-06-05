@@ -1,3 +1,3 @@
-DROP DATABASE IF EXISTS LetsChat_db;
+DROP DATABASE IF EXISTS chitchat_db;
 
-CREATE DATABASE LetsChat_db;
+CREATE DATABASE chitchat_db;
