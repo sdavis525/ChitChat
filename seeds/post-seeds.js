@@ -23,22 +23,22 @@ const postdata = [
   },
   {
     title: 'Fun date night ideas',
-    post_url: 'https://stanford.edu/consequat.png',
+    post_content: 'https://stanford.edu/consequat.png',
     user_id: 4
   },
   {
     title: 'How to spice up your love life',
-    post_url: 'http://edublogs.org/non/ligula/pellentesque.js',
+    post_content: 'http://edublogs.org/non/ligula/pellentesque.js',
     user_id: 1
   },
   {
     title: 'Ten styles you need for the summer',
-    post_url: 'http://ucla.edu/consequat/nulla.html',
+    post_content: 'http://ucla.edu/consequat/nulla.html',
     user_id: 1
   },
   {
     title: 'Are you the one?',
-    post_url: 'http://theguardian.com/dui/vel/nisl/duis/ac/nibh.aspx',
+    post_: 'http://theguardian.com/dui/vel/nisl/duis/ac/nibh.aspx',
     user_id: 7
   },
   {
