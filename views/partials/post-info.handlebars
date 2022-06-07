@@ -1,12 +1,10 @@
 <article class="post">
-  <div class="title">
-    <span>{{title}}</span>
-    <br>
-    <span>{{post_content}}</span>
-  </div>
-  <div class="meta">
-    {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
-    |
-    <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-  </div>
-</article>
+      <div class="title">
+        <h3>{{title}}</h3>
+        <h5> Posted On: {{format_date created_at}}</h5>
+        <p>{{post_text}}</p>
+      </div>
+      <div class="meta">
+         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+      </div>
+    </article>

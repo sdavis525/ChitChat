@@ -3,8 +3,8 @@ const { User, Post } = require('../models');
 
 const userdata = [
   {
-    username: 'tacosforlife12',
-    email: 'stacydash@gmail.com',
+    username: 'geminis777',
+    email: 'geminis888@gmail.com',
     password: 'password123'
   },
   {
@@ -28,13 +28,13 @@ const userdata = [
     password: 'password123'
   },
   {
-    username: 'gemini888',
+    username: 'msprague5',
     email: 'larnout5@imdb.com',
     password: 'password123'
   },
   {
-    username: 'sophthemillionaire',
-    email: 'moneymakersoph@icolud.com',
+    username: 'mpergens6',
+    email: 'hnapleton6@feedburner.com',
     password: 'password123'
   },
   {
@@ -51,12 +51,7 @@ const userdata = [
     username: 'jmacarthur9',
     email: 'bsteen9@epa.gov',
     password: 'password123'
-  },
-  {
-    username: 'michaelscott',
-    email: 'dundermifflin@icloud.com',
-    password: 'password123'
-  },
+  }
 ];
 
 const seedUsers = () => User.bulkCreate(userdata, {individualHooks: true});

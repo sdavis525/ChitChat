@@ -41,7 +41,7 @@ User.init(
            
             len: [4]
         }
-        }
+        },
   },
   {
       hooks: {

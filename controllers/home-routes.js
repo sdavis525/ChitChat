@@ -3,46 +3,51 @@ const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
 
-// get all posts for homepage
+// GET POSTS FOR HOMEPAGE
 router.get('/', (req, res) => {
-  console.log('======================');
+  console.log(req.session);
   Post.findAll({
-    attributes: [
-      'id',
-      'post_text',
-      'title',
-      'created_at'
-    ],
-    include: [
-      {
-        model: Comment,
-        attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
-        include: {
-          model: User,
-          attributes: ['username']
-        }
-      },
-      {
-        model: User,
-        attributes: ['username']
-      }
-    ]
-  })
-    .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
+      attributes: [
+          'id',
+          'post_text',
+          'title',
+          'created_at'
+      ],
+      include: [
+          {
+       
+              model: Comment,
+              attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
 
-      res.render('homepage', {
-        posts,
-        loggedIn: req.session.loggedIn
+              include: {
+                  model: User,
+                  attributes: ['username']
+              }
+          },
+          {
+             
+              model: User,
+              attributes: ['username']
+          }
+      ]
+  })
+      .then(dbPostData => {
+  
+          const posts = dbPostData.map(post => post.get({ plain: true }));
+          
+   
+          res.render('homepage', { 
+            posts,
+            loggedIn: req.session.loggedIn 
+          });
+      })
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
       });
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
 });
 
-// get single post
+
 router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {
