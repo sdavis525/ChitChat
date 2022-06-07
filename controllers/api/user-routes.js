@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
-
+const withAuth = require('../../utils/auth');
+const sequelize = require('../../config/connection');
 
 router.get('/', (req, res) => {
 
@@ -77,7 +78,7 @@ router.post('/login', (req, res) => {
 // expects {email: 'lernantino@gmail.com', password: 'password1234'}
 User.findOne({
   where: {
-    email: req.body.email
+    username: req.body.username
   }
 }).then(dbUserData => {
   if (!dbUserData) {
@@ -102,7 +103,7 @@ User.findOne({
 });
 });
 
-router.post('/logout', (req, res) => {
+router.post('/logout', withAuth, (req, res) => {
 if (req.session.loggedIn) {
   req.session.destroy(() => {
     res.status(204).end();
@@ -114,8 +115,6 @@ else {
 });
 
 router.put('/:id', (req, res) => {
-
-// pass in req.body instead to only update what's passed through
 User.update(req.body, {
   individualHooks: true,
   where: {
@@ -135,7 +134,7 @@ User.update(req.body, {
   });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', withAuth, (req, res) => {
 User.destroy({
   where: {
     id: req.params.id

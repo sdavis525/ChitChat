@@ -1,31 +1,30 @@
-<article>
-  <a href="/dashboard"> &larr; Back to dashboard</a>
-  <h2>
-    Edit Post
-  </h2>
-  <form class="edit-post-form">
-    <div>
-      <input name="post-title" type="text" value="{{post.title}}" />
-      <span>({{format_text post.post_text}})</span>
-    </div>
-    <div>
-      <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
-    </div>
-    <button type="submit">Save post</button>
-    <button type="button" class="delete-post-btn">Delete post</button>
-  </form>
-</article>
-
-<form class="comment-form">
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
+<form class="edit-post-form">
+    <div class="grid grid-cols-7">
+        <div class="col-start-2 col-end-7 mt-8">
+            <div class="pt-10">
+                <div class="bg-black shadow rounded-lg mb-6 p-4 md">
+                    <h2 class="text-white text-2xl font-bold mb-4">
+                        Edit Post
+                    </h2>
+                    <textarea name="post-title" type="text" id="post-title" value="{{posts.title}}"
+                        placeholder="Edit your post title here"
+                        class=" focus:outline-none  w-full rounded-lg p-6 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400"></textarea>
+                    <textarea name="post-text" type="text" id="post-text"value="{{posts.post_text}}"
+                        placeholder="Edit your post content here"
+                        class=" focus:outline-none  w-full rounded-lg p-6 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400"></textarea>
+                         <button type="submit"class="edit-btn flex items-center py-2 px-4 rounded-lg outline-white text-sm bg-slate-700 text-white shadow-lg m-2 edit-post-btn" id="edit-btn">Edit</button>
+                            <br><br>    
+                            <button type="button"class="delete-btn flex items-center py-2 px-4 rounded-lg outline-white text-sm bg-slate-700 text-white shadow-lg m-2">Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 </form>
+
+
+
+
 
 <script src="/javascript/edit-post.js"></script>
 <script src="/javascript/delete-post.js"></script>
-<script src="/javascript/comment.js"></script>

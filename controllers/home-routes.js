@@ -13,6 +13,7 @@ router.get('/', (req, res) => {
           'title',
           'created_at'
       ],
+      order: [['created_at', 'DESC']],
       include: [
           {
        
@@ -75,10 +76,6 @@ router.get('/post/:id', (req, res) => {
     ]
   })
     .then(dbPostData => {
-      if (!dbPostData) {
-        res.status(404).json({ message: 'No post found with this id' });
-        return;
-      }
 
       const post = dbPostData.get({ plain: true });
 
