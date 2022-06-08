@@ -34,6 +34,7 @@ SO THAT I can publish articles, blog posts, and my thoughts and opinions
 ### ✨ Deployment
 
 (https://manifest-beach.herokuapp.com/)
+<img width="1508" alt="Screen Shot 2022-06-08 at 4 18 59 PM" src="https://user-images.githubusercontent.com/98237529/172709936-30398cba-b3cb-4ec9-b386-a782e3d69673.png">
 
 ## Install
 
