@@ -5,19 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "jest",
-    "start": "node app.js",
+    "start": "node server.js",
     "seeds": "node seeds/index.js"
   },
-
-  "production": {
-    "use_env_variable": "DATABASE_URL",
-    "dialect": "postgres",
-    "dialectOptions": {
-       "ssl": {
-         "require": true,
-         "rejectUnauthorized": false
-       },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sdavis525/ChitChat.git"
