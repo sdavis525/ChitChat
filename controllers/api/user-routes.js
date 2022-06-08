@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { User, Post, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
-const sequelize = require('../../config/connection');
+
 
 router.get('/', (req, res) => {
 
@@ -114,7 +114,7 @@ else {
 }
 });
 
-router.put('/:id', (req, res) => {
+router.put('/:id', withAuth, (req, res) => {
 User.update(req.body, {
   individualHooks: true,
   where: {

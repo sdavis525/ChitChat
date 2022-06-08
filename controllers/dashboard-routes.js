@@ -21,26 +21,26 @@ router.get('/', withAuth, (req, res) => {
       order: [['created_at', 'DESC']],
       include: [
           {
-              //include comments on posts
+             
               model: Comment,
               attributes: ['id', 'comment_text', 'post_id', 'user_id', 'created_at'],
               include: {
-                  //include who made the comment
+                
                   model: User,
                   attributes: ['username']
               }
           },
           {
-              //include who created the post
+           
               model: User,
               attributes: ['username']
           }
       ]
   })
-  //serialize the data
+
   .then(dbPostData => {
       const posts = dbPostData.map(post => post.get({ plain: true }));
-      //pass data as posts to dashboard.handlebars template
+    
       res.render('dashboard', { posts, loggedIn: true });
   })
   .catch(err => {
@@ -50,7 +50,7 @@ router.get('/', withAuth, (req, res) => {
 })
 
 
-//EDIT A POST   -   /dashboard/edit/:id
+
 router.get('/edit/:id', withAuth, (req, res) => {
   Post.findOne({
     where: {

@@ -1,29 +1,32 @@
-{{#if posts.length}}
-<section class="grid grid-cols-7">
-  <div class="col-start-2 col-end-7">
-    <div class="bg-black shadow rounded-lg mt-16 mb-6 p-4 w-full ">
-      <h2 class="text-white text-2xl font-bold">User Posts</h2>
-      <br>
-      <ol>
-        {{#each posts as |post|}}
 
-        <li
-          class=" focus:outline-none  w-full rounded-lg p-1 text-sm bg-gray-100 border border-transparent appearance-none rounded-tg placeholder-gray-400">
-          <a href="/posts/{{post.id}}" class="font-medium text-lg">{{title}}</a>
-          <br>
-          <span>{{post_text}}</span><br>
-          <span> by {{user.username}} on
-            {{format_date created_at}}</span><br>
-          <span><a href="/posts/{{post.id}}"">{{comments.length}} {{format_plural " comment" comments.length}}</a></span>
+
+
+
+<div class="relative flex flex-col ">
+  <div class="w-4/5 p-6 m-auto mt-10 border-black-600 rounded shadow-lg shadow-black-800/50 bg-cyan-600">
+    <section>
+      <h2 class="text-2xl font-bold">Blog Posts</h2>
+      <ol class="post-list">
+        {{#each posts as |post|}}
+        <li>
+          <article class="post">
+            <div class="title block text-lg font-bold text-black bg-white border rounded-md p-3 mt-3 mb-3">
+              <a href="/post/{{id}}">{{post.title}}</a>
+              <div class="text-sm font-light">
+                Posted by {{post.user.username}} on {{format_date created_at}}
+              </div>
+              <div class="font-medium text-base">
+        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+      </div>
+            </div>
+
+          </article>
         </li>
-        <br>
         {{/each}}
       </ol>
-    </div>
+    </section>
   </div>
-</section>
-{{/if}}
-
+</div>
 
 
 
